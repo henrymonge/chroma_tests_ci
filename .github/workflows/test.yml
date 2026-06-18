@@ -1,0 +1,12 @@
+name: Test self-hosted runner
+on: [push, workflow_dispatch]
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Hello from my self-hosted runner!"
+      - run: uname -m
+      - run: cmake --version
+      - run: g++ --version
